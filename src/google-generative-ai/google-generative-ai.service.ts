@@ -19,7 +19,7 @@ export class GoogleGenerativeAiService {
       const response = await this.httpService.get(url).toPromise();
       return response.data.items;
     } catch (error) {
-      // console.error('Error generating content:', error);
+      console.error('Error generating content:', error);
       throw new Error('Error generating content.');
     }
   }
