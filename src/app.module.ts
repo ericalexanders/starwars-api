@@ -10,9 +10,17 @@ import { StarshipsController } from './starships/starships.controller';
 import { PlanetsController } from './planets/planets.controller';
 import { PeopleService } from './people/people.service';
 import { HttpModule } from '@nestjs/axios';
+import { GoogleGenerativeAiService } from './google-generative-ai/google-generative-ai.service';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [PeopleModule, HttpModule],
+  imports: [
+    PeopleModule,
+    HttpModule,
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+  ],
   controllers: [
     AppController,
     FilmsController,
@@ -25,6 +33,7 @@ import { HttpModule } from '@nestjs/axios';
     StarshipsService,
     PlanetsService,
     PeopleService,
+    GoogleGenerativeAiService,
   ],
 })
 export class AppModule {}

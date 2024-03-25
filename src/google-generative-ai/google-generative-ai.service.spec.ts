@@ -1,6 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { HttpService } from '@nestjs/axios';
-import { GoogleGenerativeAiService } from '../google-generative-ai/google-generative-ai.service';
+import { GoogleGenerativeAiService } from './google-generative-ai.service';
 import { ConfigService } from '@nestjs/config';
 import { of } from 'rxjs';
 import { AxiosResponse } from 'axios';
